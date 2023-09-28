@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\custom_controller\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//__CUSTOM ROUTE__//
+Route::get('/',function(){
+    return view('home');
 });
+
+Route::get('/hashing',[HomeController::class,'hashing'])->name('hashing');
